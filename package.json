@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "test": "truffle test",
+    "test:local": "truffle test --network local",
+    "coverage": "truffle run coverage",
+    "coverage:local": "truffle run coverage --network local"
+  },
+  "devDependencies": {
+    "@openzeppelin/truffle-upgrades": "^1.15.0",
+    "ganache-cli": "^6.12.2",
+    "solidity-coverage": "^0.7.21"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts-upgradeable": "^4.6.0"
+  }
+}
