@@ -1,0 +1,419 @@
+{
+  "contractName": "ServiceDataLayout",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.11+commit.d7f03943\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/data/ServiceDataLayout.sol\":\"ServiceDataLayout\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/data/ServiceDataLayout.sol\":{\"keccak256\":\"0xe77a11833d7fd997788591897764045ce1c074a483c057e3d0c4cab8548e520e\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://e0b09fd4c08222bacc5bea66e5fa9e44e7963e5f50dfa76e221c0aaa44759fbe\",\"dweb:/ipfs/QmWUreGmbWHaHcaU3MPqGiRbDwBTf1nVeMuVNHkGPWwY9Q\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea26469706673582212201a70e6424c922947d858903cedcdb9c809c9a04f08b07683d1abb3bea436456c64736f6c634300080b0033",
+  "deployedBytecode": "0x6080604052600080fdfea26469706673582212201a70e6424c922947d858903cedcdb9c809c9a04f08b07683d1abb3bea436456c64736f6c634300080b0033",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "66:202:13:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "66:202:13:-:0;;;;;",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity >=0.4.22 <0.9.0;\n\ncontract ServiceDataLayout {\n    uint256 internal _currentId;\n    mapping(uint256 => ServiceCol) internal _metaDataUri;\n    struct ServiceCol {\n        string _termURI;\n        string _termHash;\n    }\n}",
+  "sourcePath": "/Users/swallow/hoby/zinkaq/blockchain/contracts/data/ServiceDataLayout.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/data/ServiceDataLayout.sol",
+    "exportedSymbols": {
+      "ServiceDataLayout": [
+        2215
+      ]
+    },
+    "id": 2216,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2202,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:32:13"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "ServiceDataLayout",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 2215,
+        "linearizedBaseContracts": [
+          2215
+        ],
+        "name": "ServiceDataLayout",
+        "nameLocation": "75:17:13",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 2204,
+            "mutability": "mutable",
+            "name": "_currentId",
+            "nameLocation": "116:10:13",
+            "nodeType": "VariableDeclaration",
+            "scope": 2215,
+            "src": "99:27:13",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 2203,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "99:7:13",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 2209,
+            "mutability": "mutable",
+            "name": "_metaDataUri",
+            "nameLocation": "172:12:13",
+            "nodeType": "VariableDeclaration",
+            "scope": 2215,
+            "src": "132:52:13",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_ServiceCol_$2214_storage_$",
+              "typeString": "mapping(uint256 => struct ServiceDataLayout.ServiceCol)"
+            },
+            "typeName": {
+              "id": 2208,
+              "keyType": {
+                "id": 2205,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "140:7:13",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "132:30:13",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_ServiceCol_$2214_storage_$",
+                "typeString": "mapping(uint256 => struct ServiceDataLayout.ServiceCol)"
+              },
+              "valueType": {
+                "id": 2207,
+                "nodeType": "UserDefinedTypeName",
+                "pathNode": {
+                  "id": 2206,
+                  "name": "ServiceCol",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 2214,
+                  "src": "151:10:13"
+                },
+                "referencedDeclaration": 2214,
+                "src": "151:10:13",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_ServiceCol_$2214_storage_ptr",
+                  "typeString": "struct ServiceDataLayout.ServiceCol"
+                }
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "canonicalName": "ServiceDataLayout.ServiceCol",
+            "id": 2214,
+            "members": [
+              {
+                "constant": false,
+                "id": 2211,
+                "mutability": "mutable",
+                "name": "_termURI",
+                "nameLocation": "225:8:13",
+                "nodeType": "VariableDeclaration",
+                "scope": 2214,
+                "src": "218:15:13",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 2210,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "218:6:13",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 2213,
+                "mutability": "mutable",
+                "name": "_termHash",
+                "nameLocation": "250:9:13",
+                "nodeType": "VariableDeclaration",
+                "scope": 2214,
+                "src": "243:16:13",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 2212,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "243:6:13",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "ServiceCol",
+            "nameLocation": "197:10:13",
+            "nodeType": "StructDefinition",
+            "scope": 2215,
+            "src": "190:76:13",
+            "visibility": "public"
+          }
+        ],
+        "scope": 2216,
+        "src": "66:202:13",
+        "usedErrors": []
+      }
+    ],
+    "src": "32:236:13"
+  },
+  "legacyAST": {
+    "absolutePath": "project:/contracts/data/ServiceDataLayout.sol",
+    "exportedSymbols": {
+      "ServiceDataLayout": [
+        2215
+      ]
+    },
+    "id": 2216,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2202,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:32:13"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "ServiceDataLayout",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 2215,
+        "linearizedBaseContracts": [
+          2215
+        ],
+        "name": "ServiceDataLayout",
+        "nameLocation": "75:17:13",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 2204,
+            "mutability": "mutable",
+            "name": "_currentId",
+            "nameLocation": "116:10:13",
+            "nodeType": "VariableDeclaration",
+            "scope": 2215,
+            "src": "99:27:13",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 2203,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "99:7:13",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 2209,
+            "mutability": "mutable",
+            "name": "_metaDataUri",
+            "nameLocation": "172:12:13",
+            "nodeType": "VariableDeclaration",
+            "scope": 2215,
+            "src": "132:52:13",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_ServiceCol_$2214_storage_$",
+              "typeString": "mapping(uint256 => struct ServiceDataLayout.ServiceCol)"
+            },
+            "typeName": {
+              "id": 2208,
+              "keyType": {
+                "id": 2205,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "140:7:13",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "132:30:13",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_ServiceCol_$2214_storage_$",
+                "typeString": "mapping(uint256 => struct ServiceDataLayout.ServiceCol)"
+              },
+              "valueType": {
+                "id": 2207,
+                "nodeType": "UserDefinedTypeName",
+                "pathNode": {
+                  "id": 2206,
+                  "name": "ServiceCol",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 2214,
+                  "src": "151:10:13"
+                },
+                "referencedDeclaration": 2214,
+                "src": "151:10:13",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_ServiceCol_$2214_storage_ptr",
+                  "typeString": "struct ServiceDataLayout.ServiceCol"
+                }
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "canonicalName": "ServiceDataLayout.ServiceCol",
+            "id": 2214,
+            "members": [
+              {
+                "constant": false,
+                "id": 2211,
+                "mutability": "mutable",
+                "name": "_termURI",
+                "nameLocation": "225:8:13",
+                "nodeType": "VariableDeclaration",
+                "scope": 2214,
+                "src": "218:15:13",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 2210,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "218:6:13",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 2213,
+                "mutability": "mutable",
+                "name": "_termHash",
+                "nameLocation": "250:9:13",
+                "nodeType": "VariableDeclaration",
+                "scope": 2214,
+                "src": "243:16:13",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 2212,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "243:6:13",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "ServiceCol",
+            "nameLocation": "197:10:13",
+            "nodeType": "StructDefinition",
+            "scope": 2215,
+            "src": "190:76:13",
+            "visibility": "public"
+          }
+        ],
+        "scope": 2216,
+        "src": "66:202:13",
+        "usedErrors": []
+      }
+    ],
+    "src": "32:236:13"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.11+commit.d7f03943.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.5",
+  "updatedAt": "2022-07-30T05:59:44.278Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

@@ -1,0 +1,273 @@
+{
+  "contractName": "ZinkaqDataLayout",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.11+commit.d7f03943\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/data/ZinkaqDataLayout.sol\":\"ZinkaqDataLayout\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/data/ZinkaqDataLayout.sol\":{\"keccak256\":\"0x468f66e5c76f786e82f2ea3fad7a5f4efd793a09768cdff0ec8a61af10fc15c0\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ce8a55201ae5978d76b82c6ce7e04ea0d05d09a19830d1540ca5e8b8e8dbec7b\",\"dweb:/ipfs/QmaDH2zs7M5h8cu7cfFrwrjRahPRCguR3JL4RZXBFjxksY\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea26469706673582212203f71ccdf04fc837fc2efddd4140bb455794816a8c77ba7c2d9f77135b85eba9764736f6c634300080b0033",
+  "deployedBytecode": "0x6080604052600080fdfea26469706673582212203f71ccdf04fc837fc2efddd4140bb455794816a8c77ba7c2d9f77135b85eba9764736f6c634300080b0033",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "66:116:13:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "66:116:13:-:0;;;;;",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity >=0.4.22 <0.9.0;\n\ncontract ZinkaqDataLayout {\n    mapping(uint256 => string) internal _metaDataUri;\n    uint256 internal _currentId;\n}",
+  "sourcePath": "/Users/swallow/hoby/zinkaq/blockchain/contracts/data/ZinkaqDataLayout.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/data/ZinkaqDataLayout.sol",
+    "exportedSymbols": {
+      "ZinkaqDataLayout": [
+        2209
+      ]
+    },
+    "id": 2210,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2202,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:32:13"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "ZinkaqDataLayout",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 2209,
+        "linearizedBaseContracts": [
+          2209
+        ],
+        "name": "ZinkaqDataLayout",
+        "nameLocation": "75:16:13",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 2206,
+            "mutability": "mutable",
+            "name": "_metaDataUri",
+            "nameLocation": "134:12:13",
+            "nodeType": "VariableDeclaration",
+            "scope": 2209,
+            "src": "98:48:13",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_string_storage_$",
+              "typeString": "mapping(uint256 => string)"
+            },
+            "typeName": {
+              "id": 2205,
+              "keyType": {
+                "id": 2203,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "106:7:13",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "98:26:13",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_string_storage_$",
+                "typeString": "mapping(uint256 => string)"
+              },
+              "valueType": {
+                "id": 2204,
+                "name": "string",
+                "nodeType": "ElementaryTypeName",
+                "src": "117:6:13",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                }
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 2208,
+            "mutability": "mutable",
+            "name": "_currentId",
+            "nameLocation": "169:10:13",
+            "nodeType": "VariableDeclaration",
+            "scope": 2209,
+            "src": "152:27:13",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 2207,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "152:7:13",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "visibility": "internal"
+          }
+        ],
+        "scope": 2210,
+        "src": "66:116:13",
+        "usedErrors": []
+      }
+    ],
+    "src": "32:150:13"
+  },
+  "legacyAST": {
+    "absolutePath": "project:/contracts/data/ZinkaqDataLayout.sol",
+    "exportedSymbols": {
+      "ZinkaqDataLayout": [
+        2209
+      ]
+    },
+    "id": 2210,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2202,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:32:13"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "ZinkaqDataLayout",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 2209,
+        "linearizedBaseContracts": [
+          2209
+        ],
+        "name": "ZinkaqDataLayout",
+        "nameLocation": "75:16:13",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 2206,
+            "mutability": "mutable",
+            "name": "_metaDataUri",
+            "nameLocation": "134:12:13",
+            "nodeType": "VariableDeclaration",
+            "scope": 2209,
+            "src": "98:48:13",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_string_storage_$",
+              "typeString": "mapping(uint256 => string)"
+            },
+            "typeName": {
+              "id": 2205,
+              "keyType": {
+                "id": 2203,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "106:7:13",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "98:26:13",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_string_storage_$",
+                "typeString": "mapping(uint256 => string)"
+              },
+              "valueType": {
+                "id": 2204,
+                "name": "string",
+                "nodeType": "ElementaryTypeName",
+                "src": "117:6:13",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                }
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 2208,
+            "mutability": "mutable",
+            "name": "_currentId",
+            "nameLocation": "169:10:13",
+            "nodeType": "VariableDeclaration",
+            "scope": 2209,
+            "src": "152:27:13",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 2207,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "152:7:13",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "visibility": "internal"
+          }
+        ],
+        "scope": 2210,
+        "src": "66:116:13",
+        "usedErrors": []
+      }
+    ],
+    "src": "32:150:13"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.11+commit.d7f03943.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.5",
+  "updatedAt": "2022-07-30T04:40:18.824Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
