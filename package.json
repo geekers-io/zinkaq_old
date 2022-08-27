@@ -1,0 +1,27 @@
+{
+  "name": "zinkaq",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geekers-io/zinkaq.git"
+  },
+  "author": "sZma5a",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/geekers-io/zinkaq/issues"
+  },
+  "homepage": "https://github.com/geekers-io/zinkaq#readme",
+  "workspaces": [
+    "blockchain",
+    "front"
+  ],
+  "devDependencies": {
+    "@nuxt/types": "^2.15.8",
+    "@nuxt/typescript-build": "^2.1.0"
+  }
+}
