@@ -1,0 +1,27 @@
+{
+  "name": "blockchain",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "coverage": "truffle run coverage",
+    "compile": "truffle compile",
+    "test": "truffle test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geekers-io/zinkaq.git"
+  },
+  "author": "sZma5a",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/geekers-io/zinkaq/issues"
+  },
+  "homepage": "https://github.com/geekers-io/zinkaq#readme",
+  "dependencies": {
+    "@openzeppelin/contracts-upgradeable": "^4.7.3"
+  }
+}

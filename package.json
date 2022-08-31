@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev:front": "npm run dev -w front"
+    "dev:front": "npm run dev -w front",
+    "test:block": "npm run test -w blockchain",
+    "coverage": "npm run coverage -w blockchain"
   },
   "repository": {
     "type": "git",
@@ -23,6 +25,9 @@
   ],
   "devDependencies": {
     "@nuxt/types": "^2.15.8",
-    "@nuxt/typescript-build": "^2.1.0"
+    "@nuxt/typescript-build": "^2.1.0",
+    "@openzeppelin/test-helpers": "^0.5.15",
+    "ganache-cli": "^6.12.2",
+    "solidity-coverage": "^0.7.21"
   }
 }

@@ -1,4 +1,6 @@
-<template><div></div></template>
+<template>
+  <div>{{$route.params.userName}}</div>
+</template>
 
 <script lang="ts">
 import Vue from 'vue';

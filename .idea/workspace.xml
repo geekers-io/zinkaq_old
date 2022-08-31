@@ -8,7 +8,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/front" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/old/front" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -67,6 +67,9 @@
       <workItem from="1656517915188" duration="1000" />
       <workItem from="1659971455412" duration="17000" />
       <workItem from="1659971478209" duration="8000" />
+      <workItem from="1661954294087" duration="8000" />
+      <workItem from="1661954419704" duration="16000" />
+      <workItem from="1661954790465" duration="40000" />
     </task>
     <servers />
   </component>
