@@ -29,5 +29,8 @@
     "@openzeppelin/test-helpers": "^0.5.15",
     "ganache-cli": "^6.12.2",
     "solidity-coverage": "^0.7.21"
+  },
+  "dependencies": {
+    "alchemy-sdk": "^2.0.3"
   }
 }

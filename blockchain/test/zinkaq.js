@@ -102,14 +102,38 @@ contract("Zinkaq", (accounts) => {
             "This is not your user."
         );
     });
-    it("changeUserName: existed userName", async() => {
+    // it("changeUserName: existed userName", async() => {
+    //     const memberInstance = await Zinkaq.deployed();
+    //     const ownerId = await memberInstance.getIdByUserName("sZma5a");
+    //     console.log(ownerId.toString());
+    //     // await expectRevert(
+    //     //     memberInstance.changeUserName(new BN("1"), "sZma5a"),
+    //     //     "UserName is already existed."
+    //     // );
+    // });
+    it("changeMetadataUrl: change username", async() => {
         const memberInstance = await Zinkaq.deployed();
-        const ownerId = await memberInstance.getIdByUserName("sZma5a");
-        console.log(ownerId.toString());
-        // await expectRevert(
-        //     memberInstance.changeUserName(new BN("1"), "sZma5a"),
-        //     "UserName is already existed."
-        // );
+        const url = await memberInstance.changeMetadataUrl(new BN("1"), "userName");
+        const id = await memberInstance.getIdByUserName.call("userName");
+        assert.equal(
+            id.toString(),
+            "1",
+            "id not equal"
+        );
+    });
+    it("changeMetadataUrl: not own user", async() => {
+        const memberInstance = await Zinkaq.deployed();
+        await expectRevert(
+            memberInstance.changeMetadataUrl(new BN("1"), "userName", {from: accounts[1]}),
+            "This is not your user."
+        );
+    });
+    it("changeMetadataUrl: not own user", async() => {
+        const memberInstance = await Zinkaq.deployed();
+        await expectRevert(
+            memberInstance.changeMetadataUrl(new BN("2"), "userName"),
+            "This is not your user."
+        );
     });
 
 

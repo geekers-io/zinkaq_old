@@ -1,5 +1,12 @@
 <template>
 <div>
+  <div v-for="nft in nfts" v-bind:key="nft.contract.address + nft.tokenId">
+    {{nft.rawMetadata.name}}
+    <!-- {{nft.rawMetadata.description}}
+    {{nft.rawMetadata.external_url}} -->
+    <!-- {{nft}} -->
+    <img :src="nft.rawMetadata.image" class="nft_image" />
+  </div>
   <button @click="connectWallet" v-if="address == ''">Connect Wallet</button>
   <input type="text" v-model="account.userName" />
   <input type="text" v-model="account.displayName" />
@@ -13,6 +20,7 @@
 import Vue from 'vue';
 import Web3 from 'web3';
 import crypto from 'crypto';
+import { Network, Alchemy, OwnedNft, NftExcludeFilters } from 'alchemy-sdk';
 
 export default Vue.extend({
   name: 'mintPage',
@@ -26,6 +34,7 @@ export default Vue.extend({
         bio: '',
       },
       icon: {} as Buffer,
+      nfts: [] as OwnedNft[],
     };
   },
   async mounted() {
@@ -40,7 +49,26 @@ export default Vue.extend({
           });
         this.address = address;
         this.web3 = new Web3((window as any).ethereum)
+        const networks = [Network.ETH_MAINNET, Network.MATIC_MAINNET];
+        for (const network of networks) {
+          const alchemy = new Alchemy({
+              network: network as Network,
+            }
+          );
+          const nfts = await alchemy.nft.getNftsForOwner(address, {
+            // excludeFilters: [ NftExcludeFilters.SPAM ],
+          });
+          this.nfts = this.nfts.concat(nfts.ownedNfts);
+          console.log(nfts.totalCount)
+          // const response = await alchemy.nft.getNftMetadata(
+          //   "0xe51496841cd6050a6c17B81b721E60044017Ee79",
+          //   "1590"
+          // );
+          // console.log(response);
+        }
+
       }
+      
     },
     async mint() {
       console.log(this.address)
@@ -102,3 +130,10 @@ export default Vue.extend({
   }
 })
 </script>
+
+<style scoped>
+.nft_image {
+  width: 100px;
+  height: 100px;
+}
+</style>

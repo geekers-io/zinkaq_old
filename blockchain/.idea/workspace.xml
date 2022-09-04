@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96709f41-97ae-4acc-b4c8-6721ca6c6bc1" name="変更" comment="">
-      <change afterPath="$PROJECT_DIR$/.solcover.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/zinkaq.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/truffle-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/truffle-config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/pages/_userName/edit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../front/pages/_userName/edit.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/pages/_userName/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../front/pages/_userName/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/zinkaq.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/zinkaq.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +58,7 @@
       <workItem from="1661954358977" duration="7000" />
       <workItem from="1661954679409" duration="105000" />
       <workItem from="1661954835364" duration="4908000" />
-      <workItem from="1661959824873" duration="1907000" />
+      <workItem from="1661959824873" duration="3364000" />
     </task>
     <servers />
   </component>
