@@ -1,5 +1,11 @@
 <template>
 <div>
+  <button @click="connectWallet" v-if="address == ''">Connect Wallet</button>
+  <input type="text" v-model="account.userName" placeholder="userName" />
+  <input type="text" v-model="account.displayName" placeholder="displayName" />
+  <input type="text" v-model="account.bio" placeholder="bio" />
+  <input type="file" @change="onImageUploaded" />
+  <button @click="mint">Mint</button>
   <div v-for="nft in nfts" v-bind:key="nft.contract.address + nft.tokenId">
     {{nft.rawMetadata.name}}
     <!-- {{nft.rawMetadata.description}}
@@ -7,12 +13,6 @@
     <!-- {{nft}} -->
     <img :src="nft.rawMetadata.image" class="nft_image" />
   </div>
-  <button @click="connectWallet" v-if="address == ''">Connect Wallet</button>
-  <input type="text" v-model="account.userName" />
-  <input type="text" v-model="account.displayName" />
-  <input type="text" v-model="account.bio" />
-  <input type="file" @change="onImageUploaded" />
-  <button @click="mint">Mint</button>
 </div>
 </template>
 
@@ -32,6 +32,7 @@ export default Vue.extend({
         userName: '',
         displayName: '',
         bio: '',
+        image: '',
       },
       icon: {} as Buffer,
       nfts: [] as OwnedNft[],
@@ -77,37 +78,40 @@ export default Vue.extend({
         this.connectWallet();
       }
 
-      // const buf = Buffer.from(this.icon, 'base64')
-      // console.log(buf)
+      const metadataPath = '/zinkaq/metadata.json';
+      const iconPath = '/zinkaq/icon.png';
+      const metadataUrl = `http://localhost:8000/data/${this.address}${metadataPath}`;
+      const iconUrl = `http://localhost:8000/data/${this.address}${iconPath}`;
+
+      // Image Upload
       const imageHash = crypto.createHash('sha256').update(this.icon).digest('hex');
-      console.log(imageHash)
       const signed = await this.web3.eth.personal.sign(
         imageHash,
         this.address,
         "",
       );
-      console.log(signed)
-      console.log(this.web3.eth.accounts.recover(imageHash, signed));
+      this.uploadData(this.icon, signed, iconPath);
 
+      // Metadata Upload
+      this.account.image = iconUrl;
       const message = JSON.stringify(this.account);
-      let hexMessage = Web3.utils.utf8ToHex(message);
+      const messageBuffer = Buffer.from(message);
+      const messageHash = crypto.createHash('sha256').update(messageBuffer).digest('hex');
       const stringSigned = await this.web3.eth.personal.sign(
-        hexMessage,
+        messageHash,
         this.address,
         "",
       );
-      // let hashedMessage = Web3.utils.soliditySha3(hexMessage);
-      console.log(stringSigned);
+      this.uploadData(Buffer.from(message), stringSigned, metadataPath)
 
-      //   const contract = new this.web3.eth.Contract(
-      //     this.$store.state.contract.abi,
-      //     this.$store.state.contract.address,
-      //   );
-      //   const tx = await contract.methods.mint(this.account.userName, this.account.displayName).send({
-      //     from: this.address,
-      //   });
-      //   console.log(tx);
-      // }
+      const contract = new this.web3.eth.Contract(
+        this.$store.state.contract.zinkaq.abi,
+        this.$store.state.contract.zinkaq.address,
+      );
+      const tx = await contract.methods.mint(this.account.userName, metadataUrl).send({
+        from: this.address,
+      });
+      console.log(tx)
     },
     async onImageUploaded(e: { target: { files: any[]; }; }) {
       // event(=e)から画像データを取得する
@@ -127,6 +131,16 @@ export default Vue.extend({
       const buf = await image.arrayBuffer();
       this.icon = new Buffer(buf)
     },
+    async uploadData(data: Buffer, signed: string, path: string) {
+      const formData = new FormData();
+      formData.append('file', new Blob([data]));
+      formData.append('signature', signed);
+      formData.append('file_path', path);
+      return await fetch('http://localhost:8000/upload', {
+        method: 'POST',
+        body: formData,
+      });
+    }
   }
 })
 </script>

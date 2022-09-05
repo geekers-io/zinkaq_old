@@ -3,7 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="96709f41-97ae-4acc-b4c8-6721ca6c6bc1" name="変更" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/zinkaq.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/zinkaq.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/.nuxt/routes.json" beforeDir="false" afterPath="$PROJECT_DIR$/../front/.nuxt/routes.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/.nuxt/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/../front/.nuxt/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/pages/mint.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../front/pages/mint.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +64,8 @@
       <workItem from="1661954679409" duration="105000" />
       <workItem from="1661954835364" duration="4908000" />
       <workItem from="1661959824873" duration="3364000" />
+      <workItem from="1662282155358" duration="69000" />
+      <workItem from="1662351778357" duration="10000" />
     </task>
     <servers />
   </component>

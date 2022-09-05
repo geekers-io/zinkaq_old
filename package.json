@@ -27,10 +27,12 @@
     "@nuxt/types": "^2.15.8",
     "@nuxt/typescript-build": "^2.1.0",
     "@openzeppelin/test-helpers": "^0.5.15",
+    "@types/clone": "^2.1.1",
     "ganache-cli": "^6.12.2",
     "solidity-coverage": "^0.7.21"
   },
   "dependencies": {
-    "alchemy-sdk": "^2.0.3"
+    "alchemy-sdk": "^2.0.3",
+    "clone": "^2.1.2"
   }
 }
