@@ -131,14 +131,6 @@
       class="d-flex child-flex relative"
       cols="4"
     >
-      <!-- <v-btn
-        color="red lighten-2"
-        dark
-        @click="informationDialog = true"
-        class="information_btn"
-      >
-        Click Me
-      </v-btn> -->
       <div class="button_area">
         <v-btn
           icon

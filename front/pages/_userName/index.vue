@@ -95,6 +95,7 @@
     <v-tabs
       v-model="tabs"
       fixed-tabs
+      class="mb-5"
     >
       <v-tabs-slider></v-tabs-slider>
       <v-tab
@@ -121,26 +122,41 @@
 
     <v-tabs-items v-model="tabs">
       <v-tab-item
-        v-for="i in 3"
-        :key="i"
-        :value="'tab-' + i"
+        value="tab-1"
       >
-        <v-card flat>
-          <div v-for="nft in nfts" :key="nft.id">
-            <!-- {{nft}}
-            <img :src="nft.rawMetadata.image" />
-            <span>{{nft.name}}</span>
-            <span>{{nft.description}}</span> -->
+        <v-row>
+          <v-col
+            v-for="nft in nfts"
+            :key="nft.contract.address + nft.tokenId"
+            class="d-flex child-flex relative"
+            cols="4"
+          >
             <v-img
               :src="nft.rawMetadata.image"
               aspect-ratio="1"
               class="grey lighten-2"
-            >
-              <!-- <div v-if="checkNftInArray(nft.contract.address, nft.tokenId, selectedNft) !== undefined" class="selected">
-              </div> -->
-            </v-img>
-          </div>
-        </v-card>
+            />
+          </v-col>
+        </v-row>
+      </v-tab-item>
+
+      <v-tab-item
+        value="tab-2"
+      >
+        <v-row>
+          <!-- <v-col
+            v-for="nft in nfts"
+            :key="nft.contract.address + nft.tokenId"
+            class="d-flex child-flex relative"
+            cols="4"
+          >
+            <v-img
+              :src="nft.rawMetadata.image"
+              aspect-ratio="1"
+              class="grey lighten-2"
+            />
+          </v-col> -->
+        </v-row>
       </v-tab-item>
     </v-tabs-items>
     
@@ -153,6 +169,7 @@
 </template>
 
 <script lang="ts">
+import { fetchJson } from '@ethersproject/web';
 import { Alchemy, Network } from 'alchemy-sdk';
 import Vue from 'vue';
 import Web3 from 'web3';
@@ -227,6 +244,57 @@ export default Vue.extend({
       this.nfts = nft;
       this.certificates = certificates;
     }
+    // const url = 'https://eth-mainnet.alchemyapi.io/v2/VBEDOszJ3g4E5yz3NV8Od10aq2-hQhKy';
+    // const res = await fetch(url, {
+    //   method: 'POST',
+    //   body: JSON.stringify({
+    //     // id: 1,
+    //     // jsonrpc: "2.0",
+    //     method: "trace_filter",
+    //     params: [{
+    //       fromAddress: this.address,
+    //       toAddress: this.address,
+    //     }]
+    //   }),
+    // });
+    // console.log(await res.json());
+
+    const requestOptions = {
+      method: 'GET',
+    };
+    const apiKey = 'VBEDOszJ3g4E5yz3NV8Od10aq2-hQhKy'; //APIキーを入れる
+    const baseURL = `https://eth-mainnet.g.alchemy.com/nft/v2/${apiKey}/getNFTs/`;
+    const fetchURL = `${baseURL}?owner=${this.address}`;
+      
+    let nfts = await fetch(fetchURL, requestOptions).then((data) => data.json());
+    console.log(nfts)
+
+    nfts = await fetch(`https://eth-mainnet.g.alchemy.com/v2/${apiKey}`, {
+      method: "eth_getBlockByHash",
+    }).then((data) => data.json());
+    console.log(nfts)
+
+    // const sdk = require('api')('@alchemy-docs/v1.0#187nh0sh3ll782gdir');
+
+    // sdk.ethGetblockbyhashAstar({
+    //   id: 1,
+    //   jsonrpc: '2.0',
+    //   method: 'eth_getBlockByHash'
+    // }, {apiKey: apiKey})
+    //   .then((res: any) => console.log(res))
+    //   .catch((err: any) => console.error(err));
+
+
+
+    // const alchemy = new Alchemy({
+    //     network: Network.ETH_MAINNET,
+    //     apiKey: 'VBEDOszJ3g4E5yz3NV8Od10aq2-hQhKy',
+    //   }
+    // );
+    // const nfts = await alchemy.nft.getNftsForOwner(this.address, {
+    //   // excludeFilters: [ NftExcludeFilters.SPAM ],
+    // });
+    // console.log(nfts)
   },
   methods: {
     async checkOwnNft(address: string, tokenId: string, network: string) {
