@@ -12,7 +12,7 @@ const zinkaqContract = require('../../blockchain/build/contracts/Zinkaq.json');
 
 const initialState = {
   zinkaq: {
-    address: '0x859827cC5974a4b9e700E83EA16DB27574c04b6E',
+    address: '0xAdb3E36B82D2c41Bcfcc0320356B3257080e5DF5',
     abi: zinkaqContract.abi,
   },
 };

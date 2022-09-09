@@ -9,7 +9,7 @@
   "scripts": {
     "coverage": "truffle run coverage",
     "compile": "truffle compile",
-    "migration": "truffle migration",
+    "migrate": "truffle migration",
     "test": "truffle test"
   },
   "repository": {

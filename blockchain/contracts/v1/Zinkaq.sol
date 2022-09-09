@@ -53,6 +53,21 @@ contract Zinkaq is MemberDataLayout {
     return _currentId;
   }
 
+  function getUserIds() public view returns (uint256[] memory) {
+    uint256[] memory ids = new uint256[](_mintCounts[msg.sender]);
+    uint256 count = 0;
+    for (uint256 i = 1; i <= _currentId; i++) {
+      if (_ids[i] == msg.sender) {
+        ids[count] = i;
+        count += 1;
+      }
+      if (count == _mintCounts[msg.sender]) {
+        break;
+      }
+    }
+    return ids;
+  }
+
   function _changeUserName(uint256 _id, string memory _userName) private {
     require(!existUserName(_userName), "UserName is already existed.");
     string memory oldUserName = _idsUserName[_id];

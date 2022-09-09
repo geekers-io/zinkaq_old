@@ -26,6 +26,7 @@
   "devDependencies": {
     "@nuxt/types": "^2.15.8",
     "@nuxt/typescript-build": "^2.1.0",
+    "@nuxtjs/vuetify": "^1.12.3",
     "@openzeppelin/test-helpers": "^0.5.15",
     "@types/clone": "^2.1.1",
     "ganache-cli": "^6.12.2",

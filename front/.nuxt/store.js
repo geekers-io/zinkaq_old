@@ -18,6 +18,7 @@ let store = {};
   store.modules = store.modules || {}
 
   resolveStoreModules(require('../store/contract.ts'), 'contract.ts')
+  resolveStoreModules(require('../store/provider.ts'), 'provider.ts')
   resolveStoreModules(require('../store/wallet.ts'), 'wallet.ts')
 
   // If the environment supports hot reloading...
@@ -26,6 +27,7 @@ let store = {};
     // Whenever any Vuex module is updated...
     module.hot.accept([
       '../store/contract.ts',
+      '../store/provider.ts',
       '../store/wallet.ts',
     ], () => {
       // Update `root.modules` with the latest definitions.

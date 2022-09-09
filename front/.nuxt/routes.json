@@ -3,24 +3,28 @@
     "name": "mint",
     "path": "/mint",
     "component": "/Users/swallow/hoby/zinkaq/front/pages/mint.vue",
-    "chunkName": "pages/mint"
+    "chunkName": "pages/mint",
+    "_name": "_cdc71f52"
   },
   {
     "name": "index",
     "path": "/",
     "component": "/Users/swallow/hoby/zinkaq/front/pages/index.vue",
-    "chunkName": "pages/index"
+    "chunkName": "pages/index",
+    "_name": "_1a20d3ad"
   },
   {
     "name": "userName",
     "path": "/:userName",
     "component": "/Users/swallow/hoby/zinkaq/front/pages/_userName/index.vue",
-    "chunkName": "pages/_userName/index"
+    "chunkName": "pages/_userName/index",
+    "_name": "_1cdc28b3"
   },
   {
     "name": "userName-edit",
     "path": "/:userName/edit",
     "component": "/Users/swallow/hoby/zinkaq/front/pages/_userName/edit.vue",
-    "chunkName": "pages/_userName/edit"
+    "chunkName": "pages/_userName/edit",
+    "_name": "_7aae9839"
   }
 ]
