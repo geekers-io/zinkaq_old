@@ -6,12 +6,10 @@
         class="icon"
         rounded
       >
-        <img
-          :src="metadata.image"
-        />
+        <img :src="metadata.image" />
       </v-list-item-avatar>
       <v-list-item-content class="ml-3">
-        <div class="text-overline">
+        <div class="text-overline text-capitalize">
           @{{metadata.userName}}
         </div>
         <v-list-item-title class="text-h5 mb-1">
@@ -116,7 +114,7 @@
         href="#tab-3"
         class="primary--text"
       >
-        <v-icon>mdi-account-box</v-icon>
+        Authentication
       </v-tab>
     </v-tabs>
 
@@ -143,34 +141,26 @@
       <v-tab-item
         value="tab-2"
       >
-        <v-row>
-          <!-- <v-col
-            v-for="nft in nfts"
-            :key="nft.contract.address + nft.tokenId"
-            class="d-flex child-flex relative"
-            cols="4"
+        <v-list three-line>
+          <span
+            v-for="transaction in transactions"
+            :key="transaction.uniqueId"
           >
-            <v-img
-              :src="nft.rawMetadata.image"
-              aspect-ratio="1"
-              class="grey lighten-2"
+            <TransactionList
+              :transaction="transaction"
             />
-          </v-col> -->
-        </v-row>
+          </span>
+        </v-list>
       </v-tab-item>
     </v-tabs-items>
-    
-    <!-- <div v-for="nft in nfts" :key="nft.id">
-      <img :src="nft.rawMetadata.image" />
-      <span>{{nft.name}}</span>
-      <span>{{nft.description}}</span>
-    </div> -->
+    <v-tab-item value="tab-3" />
   </div>
 </template>
 
 <script lang="ts">
 import { fetchJson } from '@ethersproject/web';
 import { Alchemy, Network } from 'alchemy-sdk';
+import { text } from 'body-parser';
 import Vue from 'vue';
 import Web3 from 'web3';
 
@@ -185,6 +175,7 @@ export default Vue.extend({
       certificate: {},
       certificateDialog: false,
       tabs: null,
+      transactions: [] as any[],
     }
   },
   async mounted() {
@@ -244,20 +235,6 @@ export default Vue.extend({
       this.nfts = nft;
       this.certificates = certificates;
     }
-    // const url = 'https://eth-mainnet.alchemyapi.io/v2/VBEDOszJ3g4E5yz3NV8Od10aq2-hQhKy';
-    // const res = await fetch(url, {
-    //   method: 'POST',
-    //   body: JSON.stringify({
-    //     // id: 1,
-    //     // jsonrpc: "2.0",
-    //     method: "trace_filter",
-    //     params: [{
-    //       fromAddress: this.address,
-    //       toAddress: this.address,
-    //     }]
-    //   }),
-    // });
-    // console.log(await res.json());
 
     const requestOptions = {
       method: 'GET',
@@ -267,34 +244,33 @@ export default Vue.extend({
     const fetchURL = `${baseURL}?owner=${this.address}`;
       
     let nfts = await fetch(fetchURL, requestOptions).then((data) => data.json());
-    console.log(nfts)
 
-    nfts = await fetch(`https://eth-mainnet.g.alchemy.com/v2/${apiKey}`, {
-      method: "eth_getBlockByHash",
+    const fromNfts = await fetch(`https://eth-mainnet.g.alchemy.com/v2/${apiKey}`, {
+      method: 'POST',
+      body: JSON.stringify({
+        method: 'alchemy_getAssetTransfers',
+        params: {
+          fromAddress: this.address,
+          category: ['erc721'],
+        },
+      }),
     }).then((data) => data.json());
-    console.log(nfts)
 
-    // const sdk = require('api')('@alchemy-docs/v1.0#187nh0sh3ll782gdir');
+    const toNfts = await fetch(`https://eth-mainnet.g.alchemy.com/v2/${apiKey}`, {
+      method: 'POST',
+      body: JSON.stringify({
+        method: 'alchemy_getAssetTransfers',
+        params: {
+          toAddress: this.address,
+          category: ['erc721'],
+          withMetadata: true,
+        },
+      }),
+    }).then((data) => data.json());
 
-    // sdk.ethGetblockbyhashAstar({
-    //   id: 1,
-    //   jsonrpc: '2.0',
-    //   method: 'eth_getBlockByHash'
-    // }, {apiKey: apiKey})
-    //   .then((res: any) => console.log(res))
-    //   .catch((err: any) => console.error(err));
-
-
-
-    // const alchemy = new Alchemy({
-    //     network: Network.ETH_MAINNET,
-    //     apiKey: 'VBEDOszJ3g4E5yz3NV8Od10aq2-hQhKy',
-    //   }
-    // );
-    // const nfts = await alchemy.nft.getNftsForOwner(this.address, {
-    //   // excludeFilters: [ NftExcludeFilters.SPAM ],
-    // });
-    // console.log(nfts)
+    this.transactions = fromNfts.result.transfers.concat(toNfts.result.transfers).sort((a: { blockNum: string; }, b: { blockNum: string; }) => {
+      return parseInt(b.blockNum) - parseInt(a.blockNum);
+    }).map((tx: any) => { return { ...tx, network: Network.ETH_MAINNET } });
   },
   methods: {
     async checkOwnNft(address: string, tokenId: string, network: string) {
